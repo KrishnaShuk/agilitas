@@ -1,15 +1,26 @@
-// src/app/page.tsx
+import { Navbar } from "@/components/ui/Navbar";
+import HeroSection from "@/components/Hero"; // Make sure this path is correct
+import TransitionSection from "@/components/TransitionSection"; // <-- IMPORT THE NEW COMPONENT
+import PlaybookSection from "@/components/PlaybookSection"; 
+import ComingSoonSection from "@/components/ComingSoonSection";
+import JoinMovementSection from "@/components/JoinMovementSection"
+import Lotto from '@/components/Lotto';
+import Footer from "@/components/Footer";
 
-// UPDATE THIS IMPORT
-import { Navbar } from "@/components/Navbar";
 
 export default function Home() {
   return (
     <main className="bg-white">
-      {/* UPDATE THIS COMPONENT */}
       <Navbar />
+      <HeroSection />
+      <TransitionSection /> {/* <-- ADD THE NEW COMPONENT HERE */}
+      <PlaybookSection />
+      <ComingSoonSection /> 
+      <JoinMovementSection />
+      <Lotto />
+      <Footer />
       
-      {/* The rest of our page will go here */}
+      {/* The rest of your page will go here */}
     </main>
   );
 }

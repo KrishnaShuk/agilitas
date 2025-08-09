@@ -1,7 +1,7 @@
 // src/app/layout.tsx
 
 import type { Metadata } from 'next';
-import { clashDisplay } from '@/lib/fonts'; // <-- IMPORT FONTS
+import { SpaceGrotesk } from '@/lib/fonts'; // <-- IMPORT FONTS
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     // APPLY THE FONT VARIABLES TO THE HTML TAG
-    <html lang="en" className={`${clashDisplay.variable}`}>
+    <html lang="en" className={`${SpaceGrotesk.variable}`}>
       <body>{children}</body>
     </html>
   );

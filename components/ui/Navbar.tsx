@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 
-import Logo from '@/assets/logo.png';
+import Logo from '@/assets/logo.svg';
 
 const navLinks = [
   { href: '#about-us', label: 'About us' },
@@ -14,16 +14,16 @@ const navLinks = [
 
 export const Navbar = () => {
   return (
-    <header className="fixed top-10 left-1/2 -translate-x-1/2 z-50" style={{ width: '1063px', height: '70px' }}>
+    <header className="fixed top-3 left-1/2 -translate-x-1/2 z-50" style={{ width: '1063px', height: '70px' }}>
       <div className="flex items-center h-full p-4 bg-black/50 backdrop-blur-figma border border-white/20 shadow-navbar-shadow gap-12">
         
         <Link href="/">
-          <Image src={Logo} alt="Agilitas Logo" className="h-10 w-auto opacity-75" />
+          <Image src={Logo} alt="Agilitas Logo" className="w-[158px] h-[51.96] opacity-75" />
         </Link>
         
         <div className="h-10 w-px bg-gray-300" />
 
-        <nav className=" lg:flex w-744px h-33px gap-15 font-display">
+        <nav className=" lg:flex w-744px h-33px gap-10 font-display">
           {navLinks.map((link) => (
             <Link
               key={link.href}

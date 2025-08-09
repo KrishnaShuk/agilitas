@@ -14,3 +14,9 @@ export const clashDisplay = localFont({
   display: 'swap',
   variable: '--font-clash-display', // CSS variable name
 });
+
+export const SpaceGrotesk = localFont({
+  src: '../assets/fonts/SpaceGrotesk-Variable.woff2',
+  display: 'swap',
+  variable: '--font-Space-Grotesk', // CSS variable name
+});
