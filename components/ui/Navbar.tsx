@@ -34,7 +34,7 @@ export const Navbar = () => {
       
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsNavbarVisible(false);
-        // CHANGE 1: Also close the mobile menu when the user scrolls down.
+        
         setIsMenuOpen(false); 
       } else {
         setIsNavbarVisible(true);

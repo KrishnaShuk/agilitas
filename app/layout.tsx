@@ -3,6 +3,7 @@
 import type { Metadata } from 'next';
 import { SpaceGrotesk } from '@/lib/fonts'; // <-- IMPORT FONTS
 import './globals.css';
+import SmoothScroller from '@/components/SmoothScroller';
 
 export const metadata: Metadata = {
   title: 'Agilitas Assignment',
@@ -17,7 +18,11 @@ export default function RootLayout({
   return (
     // APPLY THE FONT VARIABLES TO THE HTML TAG
     <html lang="en" className={`${SpaceGrotesk.variable}`}>
-      <body>{children}</body>
+      <body>
+        <SmoothScroller>
+        {children}
+        </SmoothScroller>
+      </body>
     </html>
   );
 }
