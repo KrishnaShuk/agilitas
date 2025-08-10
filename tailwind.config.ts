@@ -1,5 +1,3 @@
-// tailwind.config.ts
-
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
@@ -20,10 +18,10 @@ const config: Config = {
       backdropBlur: {
         figma: '70px',
       },
-      // --- ADD THESE NEW COLORS ---
+      
       colors: {
-        'brand-dark-teal': '#08282A', // The dark background for the angled section
-        'brand-bright-blue': '#1024F6', // The vibrant blue accent color
+        'brand-dark-teal': '#08282A', 
+        'brand-bright-blue': '#1024F6', 
       },
     },
   },

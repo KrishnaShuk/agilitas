@@ -16,7 +16,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // APPLY THE FONT VARIABLES TO THE HTML TAG
     <html lang="en" className={`${SpaceGrotesk.variable}`}>
       <body>
         <SmoothScroller>

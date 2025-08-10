@@ -8,10 +8,10 @@ import { motion } from 'framer-motion';
 const HeroSection = () => {
   return (
      <motion.section 
-      initial={{ opacity: 0, y: 50 }} // Start invisible and 50px down
-      whileInView={{ opacity: 1, y: 0 }} // Animate to visible and original position
-      viewport={{ once: true }} // Only animate once
-      transition={{ duration: 0.8 }} // Animation speed
+      initial={{ opacity: 0, y: 50 }} 
+      whileInView={{ opacity: 1, y: 0 }} 
+      viewport={{ once: true }} 
+      transition={{ duration: 0.8 }} 
     >
     <section className="relative w-full overflow-hidden">
       

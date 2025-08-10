@@ -2,9 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, X } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react"; 
 import { useState, useEffect } from "react";
 
+
+import { Sheet, SheetContent, SheetClose, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button"; 
 import Logo from "@/assets/logo.svg";
 
 const navLinks = [
@@ -15,16 +18,9 @@ const navLinks = [
   { href: "#media", label: "Media" },
 ];
 
-const CustomMenuIcon = () => (
-  <div className="flex flex-col w-7 h-5 justify-between">
-    <span className="h-[3px] w-full bg-white" />
-    <span className="h-[3px] w-4/5 bg-white self-end" />
-    <span className="h-[3px] w-2/3 bg-white self-end" />
-  </div>
-);
 
 export const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -34,8 +30,6 @@ export const Navbar = () => {
       
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsNavbarVisible(false);
-        
-        setIsMenuOpen(false); 
       } else {
         setIsNavbarVisible(true);
       }
@@ -51,7 +45,6 @@ export const Navbar = () => {
       className={`
         fixed top-4 left-4 right-4 z-50 
         lg:w-[1063px] lg:h-[70px] lg:top-3 lg:left-1/2 lg:-translate-x-1/2
-        // CHANGE 2: Increased duration from 300 to 500 for a smoother effect.
         transition-transform duration-500 ease-in-out
         ${isNavbarVisible ? "translate-y-0" : "-translate-y-full"}
       `}
@@ -88,29 +81,32 @@ export const Navbar = () => {
           </nav>
         </div>
 
-        <div className="lg:hidden pb-2.5">
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
-            {isMenuOpen ? <X size={28} className="text-white" /> : <CustomMenuIcon />}
-          </button>
+        <div className="lg:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" aria-label="Toggle menu">
+                <Menu className="h-6 w-6 text-white" />
+              </Button>
+            </SheetTrigger>
+            
+            <SheetContent side="right" className="bg-[#1C1C1C] border-l-0 text-white">
+              <nav className="flex flex-col items-center gap-4 mt-12">
+                {navLinks.map((link) => (
+                  <SheetClose asChild key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-white/80 hover:text-white text-xl w-full text-center py-4 hover:bg-white/10 "
+                    >
+                      {link.label}
+                    </Link>
+                  </SheetClose>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
 
-      {isMenuOpen && (
-        <nav className="lg:hidden mt-2 w-full bg-[#1C1C1C] border border-white/20 p-4">
-          <div className="flex flex-col items-center gap-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsMenuOpen(false)}
-                className="text-white/80 hover:text-white text-lg w-full text-center py-3 hover:bg-white/10"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </nav>
-      )}
     </header>
   );
 };

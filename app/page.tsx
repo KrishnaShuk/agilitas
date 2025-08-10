@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/ui/Navbar";
-import HeroSection from "@/components/Hero"; // Make sure this path is correct
-import TransitionSection from "@/components/TransitionSection"; // <-- IMPORT THE NEW COMPONENT
+import HeroSection from "@/components/Hero"; 
+import TransitionSection from "@/components/TransitionSection"; 
 import PlaybookSection from "@/components/PlaybookSection"; 
 import ComingSoonSection from "@/components/ComingSoonSection";
 import JoinMovementSection from "@/components/JoinMovementSection"
@@ -19,8 +19,6 @@ export default function Home() {
       <JoinMovementSection />
       <Lotto />
       <Footer />
-      
-      {/* The rest of your page will go here */}
     </main>
   );
 }
