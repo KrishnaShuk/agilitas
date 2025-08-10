@@ -1,4 +1,4 @@
-// components/TransitionSection.tsx
+
 import Image from "next/image";
 import React from "react";
 
@@ -10,7 +10,8 @@ const features = [
   },
   {
     title: "Culture in Motion",
-    description: "Rewriting culture through rhythm, rebellion and raw expression.",
+    description:
+      "Rewriting culture through rhythm, rebellion and raw expression.",
     image: "/images/culture-motion.png",
   },
   {
@@ -26,36 +27,50 @@ const TransitionSection = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-[36px] font-semibold tracking-tight text-[#000000] sm:text-5xl font-display leading-[44px]">
-            Tradition in Transition
+          <h2
+            className="text-[36px] font-semibold tracking-tight text-[#000000]
+                       sm:text-5xl font-display leading-[44px]"
+          >
+           
+            <span className="block md:hidden">Our vision for Lotto</span>
+
+           
+            <span className="hidden md:block">Tradition in Transition</span>
           </h2>
+
           <p className="mt-6 text-lg leading-8 text-gray-600 font-sans">
-            Reimagining a legacy fit to move with you
+            {/* Mobile subtitle */}
+            <span className="block md:hidden">
+              Reignite a legacy brand with new energy, rooted in:
+            </span>
+
+            
+            <span className="hidden md:block">
+              Reimagining a legacy fit to move with you
+            </span>
           </p>
         </div>
 
-        <div className="mx-auto mt-6 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        
+        <div
+          className="mx-auto mt-6 grid auto-rows-fr grid-cols-1 gap-6
+                     sm:gap-8 sm:mt-8 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+        >
           {features.map((feature) => (
-            <div key={feature.title} className="flex flex-col">
-              {/* 
-                CHANGE: This is the container that creates the skewed parallelogram "mask".
-                - It must have "relative" and "overflow-hidden".
-              */}
-              <div className="relative h-[480px] overflow-hidden -skew-x-6">
-                {/*
-                  CHANGE: The un-skew and scale transforms are now applied DIRECTLY to the Image component.
-                  - "skew-x-12": This is the reverse skew that cancels out the parent's skew, straightening the image.
-                  - "scale-125": This scales the image up slightly to ensure it fills the entire skewed frame, preventing any empty corners. You can adjust this value (e.g., "scale-110", "scale-150") if needed.
-                */}
-                <Image 
-                  src={feature.image} 
-                  alt={feature.title} 
-                  className="object-cover skew-x-6 scale-125"
-                  fill 
+            <div key={feature.title} className="flex flex-col px-2">
+              
+              <div className="relative w-full h-[370px] sm:h-[360px] md:h-[480px] overflow-hidden -skew-x-6">
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  fill
+                  className="object-cover transform skew-x-6 scale-110 md:scale-125 "
+                  priority={false}
                 />
               </div>
-              
-              <div className="text-center mt-6">
+
+             
+              <div className="text-center mt-4 md:mt-6">
                 <h3 className="text-[28px] font-bold text-gray-900 font-display">
                   {feature.title}
                 </h3>

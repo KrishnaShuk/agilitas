@@ -13,7 +13,7 @@ export default function Home() {
     <main className="bg-white">
       <Navbar />
       <HeroSection />
-      <TransitionSection /> {/* <-- ADD THE NEW COMPONENT HERE */}
+      <TransitionSection /> 
       <PlaybookSection />
       <ComingSoonSection /> 
       <JoinMovementSection />
